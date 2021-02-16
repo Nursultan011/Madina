@@ -1,0 +1,269 @@
+@import "vars"
+@import "libs"
+@import "fonts"
+
+html
+    box-sizing: border-box
+
+*,*::before,*::after
+    box-sizing: inherit
+
+*
+    outline: none !important
+    font-family: 'Roboto', sans-serif
+
+a
+    text-decoration: none !important
+    outline: none !important
+
+p
+    margin-bottom: 0
+
+h1,h2,h3,h4,h5,h6
+    margin: 0
+
+.button
+    background: #39C533
+    border-radius: 2px
+    color: white
+    border: none
+    padding: 5px 0 5px 0
+    width: 160px
+    text-align: center
+    font-size: 16px
+
+.header
+    padding: 15px 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__link
+        font-size: 16px
+        font-weight: 400
+        color: #505F98 !important
+        position: relative
+        transition: 0.3s
+        & + .header__link
+            margin-left: 60px
+        &::before
+            content: ''
+            position: absolute
+            height: 2px
+            width: 100%
+            transition: 0.3s
+            background: #505F98
+            bottom: -4px
+            opacity: 0
+        &:hover
+            &::before
+                opacity: 1
+    &__logo
+        font-size: 26px
+        color: #37447E
+        font-weight: 700
+        margin-left: -10%
+
+.main
+    background-image: url('../img/main-bg.png')
+    background-repeat: no-repeat
+    background-size: 65% 100%
+    background-position: right
+    overflow: hidden
+    &__inner
+        padding: 20vh 0
+        height: 100vh
+        background-image: url('../img/main-icon.png')
+        background-repeat: no-repeat
+        background-position: right center
+        background-size: 40%
+        background-position-y: 10%
+    &__title
+        width: 50%
+        font-weight: 500
+        font-size: 50px
+        line-height: 66px
+        letter-spacing: 1px
+        color: #091133
+        margin-bottom: 20px
+    &__subtitle
+        font-size: 18px
+        line-height: 30px
+        color: #505F98
+        font-weight: 400
+        width: 50%
+        margin-bottom: 35px
+
+.about
+    padding: 130px 0 65px
+    &__inner
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__descr
+        width: 50%
+        p
+            font-size: 18px
+            line-height: 26px
+            color: #292A2C
+            & + p
+                margin-top: 15px
+    &__title
+        font-weight: 500
+        font-size: 36px
+        line-height: 48px
+        color: #091133
+        margin-bottom: 15px
+    &__img
+        width: 40%
+        img
+            width: 100%
+
+.donate
+    background-color: #F6FEF5
+    padding: 150px 0 80px 0
+    text-align: center
+    &__inner
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &__title
+        font-weight: 500
+        font-size: 36px
+        line-height: 48px
+        text-align: center
+        color: #091133
+        margin-bottom: 15px
+    &__subtitle
+        font-size: 18px
+        line-height: 26px
+        text-align: center
+        color: #292A2C
+        width: 50%
+        margin-bottom: 35px
+    &__img
+        margin-top: 100px
+        width: 30%
+        img
+            width: 100%
+
+.footer
+    background: #B0E8AD
+    padding: 60px 0 30px 0
+    &__wrap
+        display: flex
+        justify-content: space-between
+        padding-bottom: 40px
+        border-bottom: 1px solid #FFFFFF
+    &__logo
+        font-weight: 700
+        font-size: 26px
+        line-height: 38px
+        color: #37447E
+        margin-left: 10%
+    &__wrap2
+        padding-top: 20px
+        display: flex
+        justify-content: space-between
+    &__link
+        font-size: 16px
+        font-weight: 400
+        color: #505F98 !important
+        position: relative
+        transition: 0.3s
+        & + .footer__link
+            margin-left: 60px
+        &::before
+            content: ''
+            position: absolute
+            height: 2px
+            width: 100%
+            transition: 0.3s
+            background: #505F98
+            bottom: -4px
+            opacity: 0
+        &:hover
+            &::before
+                opacity: 1
+    &__social
+        display: flex
+        align-content: center
+        a
+            img
+                width: 18px
+                height: 15px
+            & + a
+                margin-left: 30px
+
+@media (max-width: 767px)
+    .header
+        &__links
+            display: none
+        &__logo
+            margin-left: 0
+
+    .main
+        height: 120vh
+        &__inner
+            padding: 12vh 0 0 0
+            background-position: center bottom
+            background-size: 70%
+            height: 115vh
+            background-position-y: 87%
+        &__title
+            width: 100%
+            font-size: 38px
+            line-height: 40px
+        &__subtitle
+            font-size: 14px
+            width: 100%
+
+    .about
+        padding: 60px 0
+        &__inner
+            flex-wrap: wrap-reverse
+        &__descr
+            width: 100%
+            margin-bottom: 50px
+        &__img
+            width: 100%
+            margin-bottom: 30px
+
+    .about2
+        flex-wrap: wrap
+
+    .donate
+        &__title
+            font-size: 34px
+        &__subtitle
+            width: 100%
+        &__img
+            margin-top: 60px
+            width: 60%
+
+    .footer
+        .none
+            display: none
+        &__logo
+            margin-left: 0
+        &__social
+            display: none
+        &__links
+            display: flex
+            justify-content: center
+
+@media (min-width: 768px) and (max-width: 991px)
+    .main
+        height: 90vh
+        &__inner
+            padding: 15vh 0 0 0
+            background-size: 45%
+            background-position-y: 20%
+
+@media (min-width: 992px) and (max-width: 1199px)
+    .main
+        height: 60vh
+        &__inner
+            padding: 10vh 0 0 0
+
+@import "media"
